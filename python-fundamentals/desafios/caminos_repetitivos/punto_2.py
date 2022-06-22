@@ -1,3 +1,13 @@
+""" 
+    Dadas dos distancias obtenidas por un vehículo 
+    y el tiempo, calcular si debe pagar una multa 
+    de acuerdo con una tabla.
+
+    En caso de tener multa por velocidad, se le practica 
+    un examen de alcoholemia al conductor que acarrea multas 
+    adicionales de acuerdo con la norma.
+"""
+
 def main() :
     """
     Main function.

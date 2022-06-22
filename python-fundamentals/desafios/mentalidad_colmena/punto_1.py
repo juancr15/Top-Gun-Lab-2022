@@ -12,38 +12,55 @@ import os
 
 def main():
 
-    path = rf"{os.getcwd()}/python-fundamentals/desafios/mentalidad_colmena/required_data.txt"
-    file = open(path, "r+")
-    # text = file.read()
-    lines = file.readlines()
+    text = ''
 
-    file.writelines("\n\nUser data:")
-    # print(lines)
+    # Set the path of the file
+    path = rf"{os.getcwd()}/python-fundamentals/desafios/mentalidad_colmena/required_data.txt"
+    # Open the file
+    file = open(path, "r+")
+    # Read the file
+    lines = file.readlines()
+    
+    file.writelines("\n\n/////// New User \n")
+
+    # Go through the lines and set the info
     for line in lines:
         if line.find("|") != -1:
-
-            print("\n------ " + line.split("|")[1].strip() + " ------\n")
+            text = "\n------ " + line.split("|")[1].strip() + " ------\n"
+            file.writelines(text)
+            print(text)
         
         if line.find(":") != -1:
-            if line.find("•") != -1:
-                print("\n*** Family member", line.split(":")[0].strip(), " ***\n")
+            if line.find("â€¢") != -1:
+                text = "\n*** Family member " + line.split(":")[0].strip() + " ***\n"
+                file.writelines(text)
+                print(text)
             else :
-                set_info(line, path)
-                break
-        
-        
-        # print(lines.index(line))
-        # print(line)
-
+                set_info(file, line)
     file.close()
 
-def set_info(field, path):
+def set_info(file, field):
+    """ Sets the info in the file.
+
+    Parameters:
+    file (file): The file where the info will be written.
+    field (string): The field to be written.
+
+    Returns:
+    None: The info is written in the file.
+    """
     user_info = ask_user(field)
-    with open(path, "r+") as file:
-        file.writelines(user_info)
-    file.close()
+    file.writelines(f"{field.rstrip()} {user_info}\n")
 
 def ask_user(field) :
+    """ Asks the user for the info.
+    
+    Parameters:
+    field (string): The field to be asked.
+
+    Returns:
+    string: The info of the user.
+    """
     while True:
         user_input = input(field.strip() + " ")
         if user_input == "" :
@@ -55,6 +72,5 @@ def ask_user(field) :
         else:
             break
     return user_input
-
 
 main()

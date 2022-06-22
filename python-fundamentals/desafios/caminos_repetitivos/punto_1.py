@@ -2,6 +2,10 @@
     El capitán del barco pirata Thousand Sunny, 
     el famoso Monkey D. Luffy te ha designado 
     para que sirva de vigía en el mástil principal.
+
+    Crear un programa que, dada la criatura y la ubicación, 
+    construya la cadena correcta. El programa se debe ejecutar 
+    las veces que sea necesario hasta que el capital te diga “stop”.
 '''
 
 # Dictionary of creatures and their respective articles

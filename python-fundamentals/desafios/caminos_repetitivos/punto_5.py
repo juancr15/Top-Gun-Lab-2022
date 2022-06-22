@@ -1,6 +1,17 @@
 """
-    Se debe crear un programa que dada luna longitud en cuadros
+    Se debe crear un programa que dada una longitud en cuadros
     (mayor a cero), genere un tablero.
+
+    Ejemplo: 3
+        ***
+        ***
+        ***
+     ***   ***
+     ***   ***
+     ***   ***
+        ***
+        ***
+        ***
 """
 
 import math
